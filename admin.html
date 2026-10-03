@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="no-referrer">
+  <title>員工線上測驗系統 - 管理後台</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="admin.html"><img src="images/logo.svg" alt="">測驗系統・管理後台</a>
+      <span class="spacer"></span>
+      <span class="who" id="who"></span>
+      <a class="link" href="exam.html">前台考試</a>
+      <button class="link" id="btn-logout" type="button">登出</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="tabs" id="main-tabs">
+      <button class="tab active" data-view="dashboard" type="button">儀表板</button>
+      <button class="tab" data-view="approvals" type="button">帳號審核 <span class="badge bad hidden" id="pending-badge">0</span></button>
+      <button class="tab" data-view="training" type="button">訓練紀錄</button>
+      <button class="tab" data-view="questions" type="button">題庫匯入與管理</button>
+      <button class="tab" data-view="subjects" type="button">科目與及格分數</button>
+    </div>
+
+    <section id="view-dashboard"></section>
+    <section id="view-approvals" class="hidden"></section>
+    <section id="view-training" class="hidden"></section>
+    <section id="view-questions" class="hidden"></section>
+    <section id="view-subjects" class="hidden"></section>
+  </main>
+
+  <script src="js/vendor/supabase.js"></script>
+  <script src="js/vendor/xlsx.full.min.js"></script>
+  <script src="js/vendor/pdf.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/importer.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
